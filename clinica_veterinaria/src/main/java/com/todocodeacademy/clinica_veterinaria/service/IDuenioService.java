@@ -1,9 +1,6 @@
-
 package com.todocodeacademy.clinica_veterinaria.service;
-
 import com.todocodeacademy.clinica_veterinaria.model.Duenio;
 import java.util.List;
-
 
 public interface IDuenioService {
     

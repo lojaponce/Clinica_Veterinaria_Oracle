@@ -19,14 +19,12 @@ public class DuenioController {
      
       @GetMapping ("/duenio/traer")
     public List<Duenio> getPersonas() {
-        
         return duenioServ.getDuenios();
     }
     
     @PostMapping ("/duenio/crear")
     public String savePersona (@RequestBody Duenio duenio) {
         duenioServ.saveDuenio(duenio);
-        
         return "La persona fue creada correctamente";
     }
     
