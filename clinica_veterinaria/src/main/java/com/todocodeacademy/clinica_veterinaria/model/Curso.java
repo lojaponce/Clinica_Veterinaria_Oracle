@@ -1,17 +1,16 @@
 package com.todocodeacademy.clinica_veterinaria.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.annotation.PostConstruct;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
 @Entity
+@Table(name = "CURSO") // <-- recomendable
 public class Curso {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_curso;
     private String titulo;
     private String nivel;
@@ -33,6 +32,10 @@ public class Curso {
         this.dni_docente = dni_docente;
         this.img_docente = img_docente;
         this.img_idioma = img_idioma;
+    }
+    @PostConstruct
+    public void init() {
+        System.out.println(">>>>> ENTIDAD CURSO CARGADA");
     }
 }
 
